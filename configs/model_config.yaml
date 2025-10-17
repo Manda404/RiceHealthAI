@@ -1,0 +1,8 @@
+model:
+  name: "RiceHealthCNN"
+  num_classes: 4
+  input_size: [224, 224]
+  pretrained: false
+  dropout_rate: 0.3
+  optimizer: "adam"
+  loss_function: "cross_entropy"

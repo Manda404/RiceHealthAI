@@ -1,0 +1,13 @@
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:build_image_dataframe - Building image DataFrame from directory: /Users/surelmanda/Data-Science-Projects/RiceHealthAI/data/raw
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:build_image_dataframe - Detected categories: ['Bacterialblight', 'Blast', 'Brownspot', 'Tungro']
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:build_image_dataframe - DataFrame created with 5932 rows and 2 columns.
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:build_image_dataframe - Image DataFrame building completed successfully.
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Starting image distribution summary...
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Detected 4 categories with a total of 5932 images.
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Category 'Bacterialblight': 1584 images (26.70% of total)
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Category 'Blast': 1440 images (24.28% of total)
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Category 'Brownspot': 1600 images (26.97% of total)
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Category 'Tungro': 1308 images (22.05% of total)
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_loader:summarize_image_counts - Image count summary completed successfully.
+2025-10-17 10:59:35 | INFO     | ricehealthai.infrastructure.data_splitter:split_riceleaf_dataset - Dataset split completed - Train: (4152, 2), Valid: (1186, 2), Test: (594, 2)
+2025-10-17 10:59:49 | INFO     | ricehealthai.infrastructure.dataset:__init__ - Fitted LabelEncoder with classes: ['Bacterialblight' 'Blast' 'Brownspot' 'Tungro']

@@ -1,0 +1,71 @@
+[tool.poetry]
+name = "ricehealthai"
+version = "0.1.0"
+description = "AI-powered rice leaf disease detection using deep learning and clean architecture."
+license = "MIT"
+readme = "README.md"
+
+authors = ["Rostand Surel <rostand.surel@yahoo.com>"]
+
+packages = [
+    { include = "ricehealthai", from = "src" }
+]
+
+homepage = "https://github.com/rostandsurel/RiceHealthAI"
+repository = "https://github.com/rostandsurel/RiceHealthAI"
+keywords = ["AI", "deep learning", "computer vision", "agriculture", "rice disease"]
+
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "License :: OSI Approved :: MIT License"
+]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.13"
+
+# Deep Learning / Vision
+torch = "^2.4.0"
+torchvision = "^0.19.0"
+opencv-python = "^4.10.0"
+
+# Data & Processing
+numpy = "^1.26.0"
+pandas = "^2.2.0"
+scikit-learn = "^1.5.0"
+pyyaml = "^6.0.1"
+
+# Logging & CLI
+loguru = "^0.7.2"
+typer = "^0.12.3"
+
+# Visualization
+matplotlib = "^3.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+black = "^24.4.0"
+isort = "^5.13.0"
+mypy = "^1.10.0"
+
+[tool.black]
+line-length = 88
+target-version = ['py310']
+exclude = '''
+/(
+    \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

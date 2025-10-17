@@ -1,0 +1,10 @@
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  img_size: [224, 224]
+  val_split: 0.2
+  batch_size: 32
+  augmentations:
+    horizontal_flip: true
+    rotation_range: 10
+    brightness_adjust: true
