@@ -116,3 +116,53 @@ RiceHealthAI/
     ├── design_decisions.md
     └── api_reference.md
 ```
+
+
+
+```bash
+src/
+└── ricehealthai/
+    ├── __init__.py
+    │
+    ├── domain/                     # Entités métier (pures)
+    │   ├── __init__.py
+    │   ├── image_entity.py
+    │   └── metrics_entity.py
+    │
+    ├── core/                       # Utilitaires transversaux, sans effets I/O
+    │   ├── __init__.py
+    │   ├── config_loader.py        # load_config(), find_project_root()
+    │   ├── device_manager.py       # get_device(), set_seed()
+    │   ├── utils.py                # helpers légers, preview, couleurs…
+    │   └── exceptions.py
+    │
+    ├── infrastructure/             # I/O, frameworks, concret (PyTorch, FS, logs…)
+    │   ├── __init__.py
+    │   ├── logger.py               # Loguru config (console + rotation)
+    │   ├── data_loader.py          # build_image_dataframe(), etc.
+    │   ├── dataset.py              # RiceLeafDataset
+    │   ├── image_transformer.py    # transforms train/valid/test
+    │   ├── model_repository.py     # save/load checkpoints & label encoder
+    │   ├── registry_manager.py     # suivi des versions, meilleur modèle
+    │   └── models/                 # Implémentations de modèles
+    │       ├── __init__.py
+    │       ├── custom_cnn.py       # build_custom_cnn()
+    │       ├── resnet50_model.py   # build_resnet50()
+    │       ├── vgg16_model.py      # build_vgg16()
+    │       └── efficientnet_model.py # build_efficientnet()
+    │
+    ├── use_cases/                  # Orchestrateurs (métier applicatif)
+    │   ├── __init__.py
+    │   ├── train_model.py          # run_training(cfg)
+    │   ├── evaluate_model.py       # run_evaluation(cfg)
+    │   └── predict_model.py        # run_inference(cfg/inputs)
+    │
+    └── adapters/                   # Interfaces (CLI, API)
+        ├── __init__.py
+        ├── cli/
+        │   ├── __init__.py
+        │   └── main.py             # Typer CLI → appelle use_cases
+        └── api/
+            ├── __init__.py
+            └── app.py              # FastAPI → appelle use_cases
+```

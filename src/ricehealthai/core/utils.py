@@ -25,8 +25,6 @@ class clr:
     # Alias de compatibilité avec ton code précédent
     S = R             # S = Start color → rouge maintenant
 
-
-
 def get_device(verbose: bool = True) -> torch.device:
     """
     Automatically select the best available device (CUDA, MPS, or CPU).
