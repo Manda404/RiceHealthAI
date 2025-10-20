@@ -5,7 +5,7 @@ Includes device management, tensor transfer utilities,
 and simple console color helpers.
 """
 
-import torch
+import torch, random, numpy as np
 from ricehealthai.infrastructure.logger import setup_logger
 
 logger = setup_logger(__name__)
@@ -43,6 +43,12 @@ def get_device(verbose: bool = True) -> torch.device:
         if verbose:
             logger.info("Using CPU (no GPU available)")
     return device
+
+def set_seed(seed: int = 42):
+    random.seed(seed); np.random.seed(seed)
+    torch.manual_seed(seed)
+    if torch.cuda.is_available():
+        torch.cuda.manual_seed_all(seed)
 
 def preview_dataloader(name: str, loader, n_batches: int = 3):
     print("\n" + "=" * 60)
